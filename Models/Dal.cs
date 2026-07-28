@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -51,7 +52,7 @@ namespace BaseDoc_OI_GRC.Models
         private Dal()
         {            
             Bdd = new BddContext();
-            Documents = Bdd.Documents.ToList();
+            Documents = Bdd.Documents.Include(d => d.Referentiel).Include(d => d.Secteur).ToList();
             _titresDocs = new Dictionary<string, string>();
             var file = File.ReadAllLines(HttpContext.Current.Server.MapPath("~") + @"\config.txt");
             _repertoire = Directory.CreateDirectory(file[0]);
@@ -346,7 +347,7 @@ namespace BaseDoc_OI_GRC.Models
 
             if(referentiel != null && document != null)
             {
-                referentiel.Documents.Add(document);
+                document.Referentiel = referentiel;
                 Bdd.SaveChanges();
             }
         }
@@ -363,7 +364,7 @@ namespace BaseDoc_OI_GRC.Models
 
             if(document != null && secteur != null)
             {
-                secteur.Documents.Add(document);
+                document.Secteur = secteur;
                 Bdd.SaveChanges();
             }
         }
@@ -615,10 +616,7 @@ namespace BaseDoc_OI_GRC.Models
         /// </summary>
         public void RecupereDocumentsBdd()
         {
-            var list = new List<Document>();
-            foreach (var document in Bdd.Documents)
-                list.Add(document);
-            Documents = list;
+            Documents = Bdd.Documents.Include(d => d.Referentiel).Include(d => d.Secteur).ToList();
         }
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace BaseDoc_OI_GRC
                 "~/Scripts/dataTables.bootstrap.min.js",
                 "~/Scripts/dataTables.fixedHeader.min.js",
                 "~/Scripts/dataTables.responsive.min.js",
-                "~/Scripts/responsive.boostrap.min.js",
+                "~/Scripts/responsive.bootstrap.min.js",
                 "~/Scripts/principalScript.js"));
 
             bundles.Add(new StyleBundle("~/css").Include(

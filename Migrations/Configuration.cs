@@ -14,18 +14,20 @@ namespace BaseDoc_OI_GRC.Migrations
 
         protected override void Seed(BaseDoc_OI_GRC.Models.BddContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            context.Referentiels.AddOrUpdate(r => r.Id,
+                new BaseDoc_OI_GRC.Models.Referentiel { Id = 1, Nom = "Général" },
+                new BaseDoc_OI_GRC.Models.Referentiel { Id = 2, Nom = "Energie" },
+                new BaseDoc_OI_GRC.Models.Referentiel { Id = 3, Nom = "Environnement" },
+                new BaseDoc_OI_GRC.Models.Referentiel { Id = 4, Nom = "Qualité" },
+                new BaseDoc_OI_GRC.Models.Referentiel { Id = 5, Nom = "Sécurité" }
+            );
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            context.Secteurs.AddOrUpdate(s => s.Id,
+                new BaseDoc_OI_GRC.Models.Secteur { Id = 1, Nom = "Aucun" },
+                new BaseDoc_OI_GRC.Models.Secteur { Id = 2, Nom = "Chaud" },
+                new BaseDoc_OI_GRC.Models.Secteur { Id = 3, Nom = "Froid" },
+                new BaseDoc_OI_GRC.Models.Secteur { Id = 4, Nom = "EAP" }
+            );
         }
     }
 }

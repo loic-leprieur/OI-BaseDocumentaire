@@ -3,7 +3,6 @@ height:100%
 }
 
 body {
-padding-top:50px;
 font-size:2em;
 padding-bottom:3em
 }
@@ -292,4 +291,15 @@ margin-bottom:1%;
 
 .input-group-btn {
 font-size:inherit
+}
+
+footer {
+    background-color: #64cbc2;
+    color: #fff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
 }
