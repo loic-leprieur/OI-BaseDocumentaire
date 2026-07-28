@@ -1,0 +1,66 @@
+@model BaseDoc_OI_GRC.ViewModels.ConfigurationViewModel
+@{
+    ViewBag.Title = "Configuration";
+}
+
+<h2>Configuration</h2>
+
+<h3>Répertoire des documents</h3>
+@using (Html.BeginForm("ChangerRepertoire", "Admin"))
+{
+    @Html.AntiForgeryToken()
+    <div class="input-group">
+        @Html.TextBoxFor(m => m.NouveauRepertoire, new { @class = "form-control" })
+        <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary">Changer</button>
+        </span>
+    </div>
+}
+
+<h3 style="margin-top:30px;">Référentiels</h3>
+<ul class="list-group">
+    @foreach (var r in Model.RefFormReferentiels)
+    {
+        <li class="list-group-item">
+            @r.Nom
+            <div class="pull-right">
+                <a class="btn btn-xs btn-default" href="@Url.Action("RenommerReferentiel", new { idReferentiel = r.Id })">Renommer</a>
+                <a class="btn btn-xs btn-danger" href="@Url.Action("SupprimerReferentiel", new { idReferentiel = r.Id })" onclick="return confirm('Supprimer ce référentiel ?');">Supprimer</a>
+            </div>
+        </li>
+    }
+</ul>
+@using (Html.BeginForm("AjouterReferentiel", "Admin"))
+{
+    @Html.AntiForgeryToken()
+    <div class="input-group">
+        @Html.TextBox("RefFormNouveauReferentiel.Nom", null, new { @class = "form-control", placeholder = "Nom du nouveau référentiel" })
+        <span class="input-group-btn">
+            <button type="submit" class="btn btn-default">Ajouter</button>
+        </span>
+    </div>
+}
+
+<h3 style="margin-top:30px;">Secteurs</h3>
+<ul class="list-group">
+    @foreach (var s in Model.SectFormSecteurs)
+    {
+        <li class="list-group-item">
+            @s.Nom
+            <div class="pull-right">
+                <a class="btn btn-xs btn-default" href="@Url.Action("RenommerSecteur", new { idSecteur = s.Id })">Renommer</a>
+                <a class="btn btn-xs btn-danger" href="@Url.Action("SupprimerSecteur", new { idSecteur = s.Id })" onclick="return confirm('Supprimer ce secteur ?');">Supprimer</a>
+            </div>
+        </li>
+    }
+</ul>
+@using (Html.BeginForm("AjouterSecteur", "Admin"))
+{
+    @Html.AntiForgeryToken()
+    <div class="input-group">
+        @Html.TextBox("SectFormNouveauSecteur.Nom", null, new { @class = "form-control", placeholder = "Nom du nouveau secteur" })
+        <span class="input-group-btn">
+            <button type="submit" class="btn btn-default">Ajouter</button>
+        </span>
+    </div>
+}

@@ -1,0 +1,38 @@
+@model BaseDoc_OI_GRC.ViewModels.DocFormViewModel
+@{
+    ViewBag.Title = "Modifier un document";
+}
+
+<h2>Modifier le document</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(m => m.Doc.Id)
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.DocCode, "Code")
+        @Html.TextBoxFor(m => m.DocCode, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Doc.Titre, "Titre")
+        @Html.TextBoxFor(m => m.Doc.Titre, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Doc.Titre)
+    </div>
+    <div class="form-group">
+        @Html.Label("Type")
+        @Html.DropDownListFor(m => m.SelectedTypeString, Model.TypeItems, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.SelectedReferentielId)
+        @Html.DropDownListFor(m => m.SelectedReferentielId, Model.ReferentielItems, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.SelectedSecteurId)
+        @Html.DropDownListFor(m => m.SelectedSecteurId, Model.SecteurItems, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Enregistrer</button>
+    <a class="btn btn-default" href="@Url.Action("Index", "Principal")">Annuler</a>
+}

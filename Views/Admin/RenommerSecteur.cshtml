@@ -1,0 +1,17 @@
+@model BaseDoc_OI_GRC.ViewModels.SecteurRenommageViewModel
+@{
+    ViewBag.Title = "Renommer un secteur";
+}
+
+<h2>Renommer le secteur</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.IdSecteur)
+    <div class="form-group">
+        @Html.LabelFor(m => m.NomSecteur)
+        @Html.TextBoxFor(m => m.NomSecteur, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Renommer</button>
+    <a class="btn btn-default" href="@Url.Action("Configuration")">Annuler</a>
+}

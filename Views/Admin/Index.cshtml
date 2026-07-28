@@ -1,0 +1,32 @@
+@model BaseDoc_OI_GRC.ViewModels.UtilisateurViewModel
+@{
+    ViewBag.Title = "Connexion";
+    var utilisateur = Model.Utilisateur ?? new BaseDoc_OI_GRC.Models.Utilisateur();
+}
+
+@if (Model.Authentifie)
+{
+    <h2>Connecté en tant que @utilisateur.Nom</h2>
+    <a class="btn btn-default" href="@Url.Action("Deconnexion")">Se déconnecter</a>
+}
+else
+{
+    <h2>Connexion administrateur</h2>
+    using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            @Html.Label("Utilisateur.Nom", "Nom")
+            @Html.TextBox("Utilisateur.Nom", utilisateur.Nom, new { @class = "form-control" })
+            @Html.ValidationMessage("Utilisateur.Nom")
+        </div>
+        <div class="form-group">
+            @Html.Label("Utilisateur.MotDePasse", "Mot de Passe")
+            @Html.Password("Utilisateur.MotDePasse", null, new { @class = "form-control" })
+        </div>
+        <button type="submit" class="btn btn-primary">Se connecter</button>
+    }
+    <p class="text-muted" style="margin-top:10px;">
+        Pas encore de compte ? <a href="@Url.Action("CreerCompte")">Créer le compte administrateur</a>
+    </p>
+}

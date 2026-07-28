@@ -1,0 +1,34 @@
+@{
+    ViewBag.Title = "Accueil";
+}
+
+<div class="jumbotron text-center">
+    <h1 class="header-title"><img src="@Url.Content("~/Resources/logo-oi.png")" alt="Base Documentaire"/></h1>
+    <p>O-I Manufacturing Gironcourt-Sur-Vraine</p>
+
+    <form method="get" action="@Url.Action("Index", "Accueil")" class="form-inline" style="max-width:500px;margin:20px auto;">
+        <div class="input-group" style="width:100%;">
+            <input type="text" name="searchString" class="form-control" placeholder="Rechercher un document (code ou titre)" />
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="submit">Rechercher</button>
+            </span>
+        </div>
+    </form>
+
+    <a id="bouton-accesbase" class="btn btn-default" href="@Url.Action("Index", "Principal")">Accéder à la base documentaire</a>
+</div>
+
+<div class="row text-center">
+    <div class="col-sm-3 col-sm-offset-0">
+        <a id="item-Aucun" class="btn btn-block" href="@Url.Action("Index", "Principal", new { idSecteur = 1 })">Aucun secteur</a>
+    </div>
+    <div class="col-sm-3">
+        <a id="item-Chaud" class="btn btn-block" href="@Url.Action("Index", "Principal", new { idSecteur = 2 })">Chaud</a>
+    </div>
+    <div class="col-sm-3">
+        <a id="item-Froid" class="btn btn-block" href="@Url.Action("Index", "Principal", new { idSecteur = 3 })">Froid</a>
+    </div>
+    <div class="col-sm-3">
+        <a id="item-EAP" class="btn btn-block" href="@Url.Action("Index", "Principal", new { idSecteur = 4 })">EAP</a>
+    </div>
+</div>

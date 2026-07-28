@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\loicl\\source\\repos\\OI-BaseDocumentaire\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{674EE803-ED7D-436E-B5F8-1002FC9678E9}|BaseDoc_OI_GRC.csproj|c:\\users\\loicl\\source\\repos\\oi-basedocumentaire\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{674EE803-ED7D-436E-B5F8-1002FC9678E9}|BaseDoc_OI_GRC.csproj|solutionrelative:content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{674EE803-ED7D-436E-B5F8-1002FC9678E9}|BaseDoc_OI_GRC.csproj|C:\\Users\\loicl\\source\\repos\\OI-BaseDocumentaire\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{674EE803-ED7D-436E-B5F8-1002FC9678E9}|BaseDoc_OI_GRC.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{674EE803-ED7D-436E-B5F8-1002FC9678E9}|BaseDoc_OI_GRC.csproj|C:\\Users\\loicl\\source\\repos\\OI-BaseDocumentaire\\views\\accueil\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{674EE803-ED7D-436E-B5F8-1002FC9678E9}|BaseDoc_OI_GRC.csproj|solutionrelative:views\\accueil\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{674EE803-ED7D-436E-B5F8-1002FC9678E9}|BaseDoc_OI_GRC.csproj|C:\\Users\\loicl\\source\\repos\\OI-BaseDocumentaire\\content\\bootstrap.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{674EE803-ED7D-436E-B5F8-1002FC9678E9}|BaseDoc_OI_GRC.csproj|solutionrelative:content\\bootstrap.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "bootstrap.min.css",
+              "DocumentMoniker": "C:\\Users\\loicl\\source\\repos\\OI-BaseDocumentaire\\Content\\bootstrap.min.css",
+              "RelativeDocumentMoniker": "Content\\bootstrap.min.css",
+              "ToolTip": "C:\\Users\\loicl\\source\\repos\\OI-BaseDocumentaire\\Content\\bootstrap.min.css",
+              "RelativeToolTip": "Content\\bootstrap.min.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-07-28T22:01:25.733Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\loicl\\source\\repos\\OI-BaseDocumentaire\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\loicl\\source\\repos\\OI-BaseDocumentaire\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACAAAAAAAAAAAAD4vzQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-28T21:53:18.766Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\loicl\\source\\repos\\OI-BaseDocumentaire\\Views\\Accueil\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Accueil\\Index.cshtml",
+              "ToolTip": "C:\\Users\\loicl\\source\\repos\\OI-BaseDocumentaire\\Views\\Accueil\\Index.cshtml",
+              "RelativeToolTip": "Views\\Accueil\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-28T21:44:21.703Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Site.css",
+              "DocumentMoniker": "C:\\Users\\loicl\\source\\repos\\OI-BaseDocumentaire\\Content\\Site.css",
+              "RelativeDocumentMoniker": "Content\\Site.css",
+              "ToolTip": "C:\\Users\\loicl\\source\\repos\\OI-BaseDocumentaire\\Content\\Site.css",
+              "RelativeToolTip": "Content\\Site.css",
+              "ViewState": "AgIAABcBAAAAAAAAAADwvywBAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-07-28T21:44:21.715Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

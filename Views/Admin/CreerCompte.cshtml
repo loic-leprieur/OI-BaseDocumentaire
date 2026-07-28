@@ -1,0 +1,23 @@
+@model BaseDoc_OI_GRC.Models.Utilisateur
+@{
+    ViewBag.Title = "Créer un compte administrateur";
+}
+
+<h2>Créer un compte administrateur</h2>
+<p class="text-warning">Cette page sert uniquement à la configuration initiale : à supprimer avant mise en production.</p>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="form-group">
+        @Html.LabelFor(m => m.Nom)
+        @Html.TextBoxFor(m => m.Nom, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Nom)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.MotDePasse)
+        @Html.PasswordFor(m => m.MotDePasse, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MotDePasse)
+    </div>
+    <button type="submit" class="btn btn-primary">Créer le compte</button>
+}

@@ -1,0 +1,59 @@
+@using System.Web.Optimization
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title - Base Documentaire O-I Gironcourt-Sur-Vraine</title>
+    @Styles.Render("~/css")
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-principal">
+                    <span class="sr-only">Menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="@Url.Action("Index", "Accueil")"><img src="~/Resources/oi-lg.png" height="100%" alt="Logo simple de OI" /></a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-principal">
+                <ul class="nav navbar-nav">
+                    <li><a id="bouton-accueil" href="@Url.Action("Index", "Accueil")">Accueil</a></li>
+                    <li><a id="bouton-touslesdocuments" href="@Url.Action("Index", "Principal")">Tous les documents</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li><a id="bouton-configuration" href="@Url.Action("Configuration", "Admin")">Configuration</a></li>
+                        <li><a id="bouton-deconnexion" href="@Url.Action("Deconnexion", "Admin")">Déconnexion</a></li>
+                    }
+                    else
+                    {
+                        <li><a id="bouton-connexion" href="@Url.Action("Index", "Admin")">Connexion</a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        @RenderBody()
+    </div>
+
+    <footer>
+        <div>
+            <p>
+                Projet de 2016 par Loïc LEPRIEUR au sein de la verrerie OI Manufacturing à Gironcourt-sur-Vraine
+            </p>
+
+        </div>
+    </footer>
+
+    @Scripts.Render("~/scripts-js")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

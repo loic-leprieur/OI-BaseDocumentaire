@@ -1,0 +1,29 @@
+@model BaseDoc_OI_GRC.ViewModels.DocsSelectionnesViewModel
+<div class="modal-dialog">
+    <div class="modal-content">
+        @using (Html.BeginForm("ModifierDocuments", "Principal", FormMethod.Post))
+        {
+            <div class="modal-header">
+                <h4>Modifier les documents sélectionnés</h4>
+            </div>
+            <div class="modal-body">
+                @foreach (var id in Model.DocumentsId)
+                {
+                    @Html.Hidden("DocumentsId", id)
+                }
+                <div class="form-group">
+                    @Html.LabelFor(m => m.SelectedReferentielId)
+                    @Html.DropDownListFor(m => m.SelectedReferentielId, Model.ReferentielItems, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.SelectedSecteurId)
+                    @Html.DropDownListFor(m => m.SelectedSecteurId, Model.SecteurItems, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default bouton-annuler" data-dismiss="modal">Annuler</button>
+                <button type="submit" class="btn btn-primary bouton-enregistrer">Enregistrer</button>
+            </div>
+        }
+    </div>
+</div>

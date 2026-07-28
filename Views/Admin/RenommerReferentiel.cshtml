@@ -1,0 +1,18 @@
+@model BaseDoc_OI_GRC.ViewModels.ReferentielRenommageViewModel
+@{
+    ViewBag.Title = "Renommer un référentiel";
+}
+
+<h2>Renommer le référentiel</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(m => m.IdReferentiel)
+    <div class="form-group">
+        @Html.LabelFor(m => m.NomReferentiel)
+        @Html.TextBoxFor(m => m.NomReferentiel, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Renommer</button>
+    <a class="btn btn-default" href="@Url.Action("Configuration")">Annuler</a>
+}

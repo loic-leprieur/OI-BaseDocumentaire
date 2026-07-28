@@ -1,0 +1,22 @@
+@model IEnumerable<BaseDoc_OI_GRC.Models.Document>
+<tbody>
+@foreach (var doc in Model)
+{
+    <tr>
+        @if (Request.IsAuthenticated)
+        {
+            <td class="colCheckbox"><input type="checkbox" class="checkbox-doc" value="@doc.Id" /></td>
+        }
+        <td>@doc.Code</td>
+        <td>@doc.Titre</td>
+        <td>@doc.Type</td>
+        <td>@(doc.Referentiel != null ? doc.Referentiel.Nom : "")</td>
+        <td>@(doc.Secteur != null ? doc.Secteur.Nom : "")</td>
+        <td><a class="btn btn-xs btn-default bouton-telechargement" href="@Url.Action("TelechargerDocument", "Principal", new { filename = doc.NomFichier })">Télécharger</a></td>
+        @if (Request.IsAuthenticated)
+        {
+            <td><a class="btn btn-xs btn-default bouton-modifier" href="@Url.Action("Modifier", "Documents", new { id = doc.Id })">Modifier</a></td>
+        }
+    </tr>
+}
+</tbody>
